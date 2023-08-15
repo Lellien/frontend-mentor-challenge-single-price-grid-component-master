@@ -1,0 +1,59 @@
+@import "config";
+@import "util";
+@import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+body {
+  height: 100vh;
+  max-width: 1440px;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 25vh 0;
+  background: $light-gray;
+  font-family: $font-stack;
+  font-size: 16px;
+}
+p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+.main {
+  max-width: 50%;
+  margin: 0 auto;
+  background: #ffff;
+  border-radius: 5px 5px;
+
+  h1,
+  h2,
+  h3,
+  p {
+    margin: 0;
+  }
+
+  h1 {
+    color: $primary-color;
+  }
+  .bottom {
+    display: flex;
+
+    &-left {
+      flex: 1;
+      background: $primary-color;
+    }
+
+    &-right {
+      flex: 1;
+      background: lighten($primary-color, 10%);
+    }
+  }
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  a {
+    color: hsl(228, 45%, 44%);
+  }
+}
