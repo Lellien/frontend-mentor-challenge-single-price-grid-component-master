@@ -1,8 +1,19 @@
+@use "sass:color";
+
 $font-stack: "Karla", sans-serif;
 $primary-color: hsl(179, 62%, 43%);
 $secondary-color: hsl(71, 73%, 54%);
 $mid-gray: hsl(218, 22%, 67%);
 $light-gray: hsl(204, 43%, 93%);
 
-$desktop-width: 1440px;
-$mobile-width: 375px;
+@mixin bg-effect($color, $lighten: 0%) {
+  background: color.scale(
+    $color,
+    $saturation: -15%,
+    $alpha: -1%,
+    $lightness: $lighten
+  );
+}
+
+// desktop-width 1440px;
+// mobile-width 375px;
