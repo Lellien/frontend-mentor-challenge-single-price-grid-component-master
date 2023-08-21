@@ -15,7 +15,6 @@ body {
   padding: 4.5em 2em;
   background: hsl(204, 43%, 93%);
   font-family: "Karla", sans-serif;
-  font-size: 16px;
   color: white;
   display: flex;
 }
@@ -41,52 +40,50 @@ a {
   text-decoration: none;
 }
 
-.container h1 {
-  color: hsl(179, 62%, 43%);
-  line-height: 1.5;
-  font-size: 20px;
-  margin-bottom: 20px;
-}
-.container h2 {
-  color: hsl(71, 73%, 54%);
-  font-size: 15px;
-  font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: 20px;
-}
 .container .community {
   background: rgba(255, 255, 255, 0.99);
   padding: 8%;
-  border-radius: 5px 5px 0 0;
+  border-radius: 0.3rem 0.3rem 0 0;
+}
+.container .community h1 {
+  color: hsl(179, 62%, 43%);
+  line-height: 1.5;
+  font-size: 1.25rem;
+  margin-bottom: 1em;
+}
+.container .community h2 {
+  color: hsl(71, 73%, 54%);
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1.3em;
 }
 .container .community p {
   color: hsl(218, 22%, 67%);
-  font-size: 13px;
-  font-weight: 700;
+  font-size: 0.85rem;
   opacity: 0.9;
   line-height: 2;
   margin-bottom: 6px;
 }
 .container .info h3 {
-  margin-bottom: 0.5em;
+  font-size: 1.15rem;
   opacity: 0.9;
 }
 .container .info-1 {
   padding: 7% 8%;
   background: rgba(57, 185, 183, 0.99);
-  /*       a {
-         display: block;
-       }
-  */
+}
+.container .info-1 h3 {
+  margin-bottom: 0.45em;
 }
 .container .info-1 button {
   display: block;
-  margin: 25px auto 0;
+  margin: 1.6rem auto 0.1rem;
   width: 100%;
-  padding: 13px 0;
+  padding: 0.8em 0;
   border: none;
-  border-radius: 5px;
-  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 0.3rem;
+  box-shadow: 0.1em 0.1em 0.7em rgba(0, 0, 0, 0.3);
   color: white;
   background: hsl(71, 73%, 54%);
   font-weight: 700;
@@ -97,23 +94,26 @@ a {
   margin: 0;
 }
 .container .info-1 .cost .fee {
-  font-size: 32px;
+  font-size: 2rem;
   font-weight: 700;
-  margin-right: 10px;
+  margin-right: 0.32em;
 }
 .container .info-1 .cost .freq {
   opacity: 0.6;
 }
 .container .info-2 {
   padding: 7% 8%;
-  background: rgba(82, 201, 199, 0.99);
-  border-radius: 0 0 5px 5px;
+  background: rgba(80, 201, 199, 0.99);
+  border-radius: 0 0 0.3rem 0.3rem;
+}
+.container .info-2 h3 {
+  margin-bottom: 0.7em;
 }
 .container .info-2 ul {
   padding: 0;
   list-style: none;
   opacity: 0.8;
-  font-size: 14px;
+  font-size: 0.85rem;
 }
 
 .attribution {
