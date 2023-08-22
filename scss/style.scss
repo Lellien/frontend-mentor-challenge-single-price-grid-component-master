@@ -13,11 +13,12 @@
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
-  padding: 4.5em 2em;
+  padding: 4.5em 1.95em;
   background: config.$light-gray;
   font-family: config.$font-stack;
   color: #ffff;
-  display: flex;
+  // display: flex;
+  // justify-content: center;
 }
 
 input,
@@ -41,7 +42,9 @@ a {
 }
 
 .container {
+  //@1440x800px shold be ~640px width by ~475px height
   .community {
+    //@1440x800px  ~640px by ~220px
     @include config.bg-effect(#ffff);
     padding: 8%;
     border-radius: 0.3rem 0.3rem 0 0;
@@ -69,22 +72,28 @@ a {
   }
 
   .info {
+    //@1440x800 should be 640px by  ~260px height
+    display: flex;
+    flex-direction: column;
+
     h3 {
       font-size: 1.15rem;
       opacity: 0.9;
     }
     &-1 {
+      //@desktop design 320px w x 260px h
+      flex: 1;
       padding: 7% 8%;
-      @include config.bg-effect(config.$primary-color, 8%);
+      @include config.bg-effect(config.$primary-color, 4%);
 
       h3 {
         margin-bottom: 0.45em;
       }
 
-      button {
+      a {
         display: block;
+        text-align: center;
         margin: 1.6rem auto 0.1rem;
-        width: 100%;
         padding: 0.8em 0;
         border: none;
         border-radius: 0.3rem;
@@ -112,6 +121,7 @@ a {
     }
 
     &-2 {
+      flex: 1;
       padding: 7% 8%;
       @include config.bg-effect(config.$primary-color, 21%);
       border-radius: 0 0 0.3rem 0.3rem;
@@ -137,4 +147,21 @@ a {
     color: hsl(228, 45%, 44%);
   } */
   display: none;
+}
+
+@media (min-width: 700px) {
+  .container {
+    margin: 0 auto;
+    max-width: 40em;
+    .info {
+      flex-direction: row;
+
+      &-1 {
+        border-bottom-left-radius: 0.3rem;
+      }
+      &-2 {
+        border-bottom-left-radius: 0;
+      }
+    }
+  }
 }
