@@ -10,12 +10,15 @@
 }
 
 body {
+  min-height: 100vh;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   padding: 4.5em 1.95em;
   background: hsl(204, 43%, 93%);
   font-family: "Karla", sans-serif;
   color: white;
+  display: flex;
+  justify-content: center;
 }
 
 input,
@@ -39,30 +42,32 @@ a {
   text-decoration: none;
 }
 
+.container .card {
+  padding: 1.35em 1.56em;
+}
 .container .community {
   background: rgba(255, 255, 255, 0.99);
-  padding: 8%;
   border-radius: 0.3rem 0.3rem 0 0;
 }
 .container .community h1 {
   color: hsl(179, 62%, 43%);
   line-height: 1.5;
-  font-size: 1.25rem;
+  font-size: 1.25em;
   margin-bottom: 1em;
 }
 .container .community h2 {
   color: hsl(71, 73%, 54%);
-  font-size: 0.95rem;
+  font-size: 0.95em;
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 1.3em;
 }
 .container .community p {
   color: hsl(218, 22%, 67%);
-  font-size: 0.85rem;
+  font-size: 0.85em;
   opacity: 0.9;
   line-height: 2;
-  margin-bottom: 6px;
+  margin-bottom: 0.38rem;
 }
 .container .info {
   display: flex;
@@ -72,9 +77,10 @@ a {
   font-size: 1.15rem;
   opacity: 0.9;
 }
+.container .info > * {
+  flex-basis: 100%;
+}
 .container .info-1 {
-  flex: 1;
-  padding: 7% 8%;
   background: rgba(55, 176, 174, 0.99);
 }
 .container .info-1 h3 {
@@ -84,10 +90,9 @@ a {
   display: block;
   text-align: center;
   margin: 1.6rem auto 0.1rem;
-  padding: 0.8em 0;
-  border: none;
+  padding: 0.75em 0;
   border-radius: 0.3rem;
-  box-shadow: 0.1em 0.1em 0.7em rgba(0, 0, 0, 0.3);
+  box-shadow: 0.1em 0.1em 0.7em rgba(0, 0, 0, 0.2);
   color: white;
   background: hsl(71, 73%, 54%);
   font-weight: 700;
@@ -95,19 +100,16 @@ a {
 .container .info-1 .cost {
   display: flex;
   align-items: center;
-  margin: 0;
+  gap: 0.65rem;
 }
 .container .info-1 .cost .fee {
   font-size: 2rem;
   font-weight: 700;
-  margin-right: 0.32em;
 }
 .container .info-1 .cost .freq {
   opacity: 0.6;
 }
 .container .info-2 {
-  flex: 1;
-  padding: 7% 8%;
   background: rgba(80, 201, 199, 0.99);
   border-radius: 0 0 0.3rem 0.3rem;
 }
@@ -132,8 +134,24 @@ a {
 
 @media (min-width: 700px) {
   .container {
-    margin: 0 auto;
     max-width: 40em;
+    align-self: center;
+  }
+  .container .card {
+    padding: 2.4rem;
+  }
+  .container .community {
+    font-size: 1.16rem;
+  }
+  .container .community h1 {
+    margin-bottom: 1rem;
+  }
+  .container .community h2 {
+    margin-bottom: 0.6em;
+  }
+  .container .community h2,
+  .container .community p {
+    line-height: 1.5;
   }
   .container .info {
     flex-direction: row;

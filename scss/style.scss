@@ -10,15 +10,17 @@
 * {
   margin: 0;
 }
+
 body {
+  min-height: 100vh;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   padding: 4.5em 1.95em;
   background: config.$light-gray;
   font-family: config.$font-stack;
   color: #ffff;
-  // display: flex;
-  // justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 input,
@@ -42,32 +44,36 @@ a {
 }
 
 .container {
-  //@1440x800px shold be ~640px width by ~475px height
+  //@375x870px should be ~313px width by ~725px height
+
+  .card {
+    padding: 1.35em 1.56em;
+  }
   .community {
     //@1440x800px  ~640px by ~220px
     @include config.bg-effect(#ffff);
-    padding: 8%;
     border-radius: 0.3rem 0.3rem 0 0;
+
     h1 {
       color: config.$primary-color;
       line-height: 1.5;
-      font-size: 1.25rem;
+      font-size: 1.25em;
       margin-bottom: 1em;
     }
 
     h2 {
       color: config.$secondary-color;
-      font-size: 0.95rem;
+      font-size: 0.95em;
       font-weight: 700;
       line-height: 1.2;
       margin-bottom: 1.3em;
     }
     p {
       color: config.$mid-gray;
-      font-size: 0.85rem;
+      font-size: 0.85em;
       opacity: 0.9;
       line-height: 2;
-      margin-bottom: 6px;
+      margin-bottom: 0.38rem;
     }
   }
 
@@ -80,10 +86,13 @@ a {
       font-size: 1.15rem;
       opacity: 0.9;
     }
+
+    & > * {
+      flex-basis: 100%;
+    }
+
     &-1 {
       //@desktop design 320px w x 260px h
-      flex: 1;
-      padding: 7% 8%;
       @include config.bg-effect(config.$primary-color, 4%);
 
       h3 {
@@ -94,10 +103,9 @@ a {
         display: block;
         text-align: center;
         margin: 1.6rem auto 0.1rem;
-        padding: 0.8em 0;
-        border: none;
+        padding: 0.75em 0;
         border-radius: 0.3rem;
-        box-shadow: 0.1em 0.1em 0.7em rgba(0, 0, 0, 0.3);
+        box-shadow: 0.1em 0.1em 0.7em rgba(0, 0, 0, 0.2);
         color: #ffff;
         background: config.$secondary-color;
         font-weight: 700;
@@ -106,12 +114,11 @@ a {
       .cost {
         display: flex;
         align-items: center;
-        margin: 0;
+        gap: 0.65rem;
 
         .fee {
           font-size: 2rem;
           font-weight: 700;
-          margin-right: 0.32em;
         }
 
         .freq {
@@ -121,8 +128,6 @@ a {
     }
 
     &-2 {
-      flex: 1;
-      padding: 7% 8%;
       @include config.bg-effect(config.$primary-color, 21%);
       border-radius: 0 0 0.3rem 0.3rem;
 
@@ -151,8 +156,28 @@ a {
 
 @media (min-width: 700px) {
   .container {
-    margin: 0 auto;
+    //@1440x800px shold be ~635px width by ~475px height
     max-width: 40em;
+    align-self: center;
+
+    .card {
+      padding: 2.4rem;
+    }
+
+    .community {
+      font-size: 1.16rem;
+      h1 {
+        margin-bottom: 1rem;
+      }
+      h2 {
+        margin-bottom: 0.6em;
+      }
+      h2,
+      p {
+        line-height: 1.5;
+      }
+    }
+
     .info {
       flex-direction: row;
 
