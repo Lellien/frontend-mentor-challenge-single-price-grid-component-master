@@ -42,6 +42,12 @@ a {
   text-decoration: none;
 }
 
+.container {
+  height: -moz-fit-content;
+  height: fit-content;
+  box-shadow: 0 1rem 1.5rem rgba(55, 164, 162, 0.2);
+  border-radius: 0.3rem;
+}
 .container .card {
   padding: 1.35em 1.56em;
 }
@@ -134,7 +140,7 @@ a {
 
 @media (min-width: 700px) {
   .container {
-    max-width: 40em;
+    max-width: 39.6em;
     align-self: center;
   }
   .container .card {
@@ -147,11 +153,14 @@ a {
     margin-bottom: 1rem;
   }
   .container .community h2 {
-    margin-bottom: 0.6em;
+    margin-bottom: 0.25em;
   }
   .container .community h2,
   .container .community p {
-    line-height: 1.5;
+    line-height: 1.7;
+  }
+  .container .community p {
+    margin-bottom: 0;
   }
   .container .info {
     flex-direction: row;

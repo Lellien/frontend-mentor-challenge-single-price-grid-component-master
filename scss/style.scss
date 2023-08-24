@@ -45,6 +45,10 @@ a {
 
 .container {
   //@375x870px should be ~313px width by ~725px height
+  height: fit-content;
+  box-shadow: 0 1rem 1.5rem
+    color.scale(config.$primary-color, $saturation: -20%, $alpha: -80%);
+  border-radius: 0.3rem;
 
   .card {
     padding: 1.35em 1.56em;
@@ -157,7 +161,7 @@ a {
 @media (min-width: 700px) {
   .container {
     //@1440x800px shold be ~635px width by ~475px height
-    max-width: 40em;
+    max-width: 39.6em;
     align-self: center;
 
     .card {
@@ -170,11 +174,15 @@ a {
         margin-bottom: 1rem;
       }
       h2 {
-        margin-bottom: 0.6em;
+        margin-bottom: 0.25em;
       }
       h2,
       p {
-        line-height: 1.5;
+        line-height: 1.7;
+      }
+
+      p {
+        margin-bottom: 0;
       }
     }
 
