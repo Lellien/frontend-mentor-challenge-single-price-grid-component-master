@@ -1,0 +1,39 @@
+@use "sass:color";
+@use "sass:string";
+@use "sass:map";
+
+$font-stack: "Karla", sans-serif;
+$primary-color: hsl(179, 62%, 43%);
+$secondary-color: hsl(71, 73%, 54%);
+$mid-gray: hsl(218, 22%, 67%);
+$light-gray: hsl(204, 43%, 93%);
+
+@mixin bg-effect($color, $lighten: 0%) {
+  background: color.scale(
+    $color,
+    $saturation: -15%,
+    $alpha: -1%,
+    $lightness: $lighten
+  );
+}
+
+@function set-radius($corner, $num, $unit: rem) {
+  $corners: (
+    //t=top b=bottom r=right l=left
+    "t": #{$num}#{$unit} #{$num}#{$unit} 0 0,
+    "r": 0 #{$num}#{$unit} #{$num}#{$unit} 0,
+    "b": 0 0 #{$num}#{$unit} #{$num}#{$unit},
+    "l": #{$num}#{$unit} 0 0 #{$num}#{$unit},
+    "tl": #{$num}#{$unit} 0 0 0,
+    "tr": 0 #{$num}#{$unit} 0 0,
+    "br": 0 0 #{$num}#{$unit} 0,
+    "bl": 0 0 0 #{$num}#{$unit}
+  );
+
+  @return map.get($corners, $corner);
+}
+
+/* 
+ desktop-width 1440px
+mobile-width 375px;
+ */
