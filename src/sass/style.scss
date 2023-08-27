@@ -15,12 +15,13 @@ body {
   min-height: 100vh;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
-  padding: 4.5em 1.95em;
+  padding-inline: 1.95em;
   background: config.$light-gray;
   font-family: config.$font-stack;
   color: #ffff;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 input,
@@ -51,7 +52,7 @@ a {
   border-radius: 0.3rem;
 
   .card {
-    padding: 1.35em 1.56em;
+    padding: 1.4em 1.56em;
   }
   .community {
     //@1440x800px  ~640px by ~220px
@@ -107,12 +108,59 @@ a {
         display: block;
         text-align: center;
         margin: 1.6rem auto 0.1rem;
-        padding: 0.75em 0;
+        padding-block: 0.75em;
         border-radius: 0.3rem;
-        box-shadow: 0.1em 0.1em 0.7em rgba(0, 0, 0, 0.2);
-        color: #ffff;
         background: config.$secondary-color;
+        color: #ffff;
+        box-shadow: 0.1em 0.1em 0.7em rgba(0, 0, 0, 0.2);
         font-weight: 700;
+        position: relative;
+        transition: all ease-in-out 150ms;
+      }
+
+      a::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        border-radius: 0.4em;
+        // border: 1px solid #ffff;
+        border: 1px solid config.$secondary-color;
+        opacity: 0;
+        transition: all ease-in-out 250ms;
+      }
+
+      a::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        border-radius: 0.2em;
+        box-shadow: -2px -2px 8px 1px color.scale(
+            config.$primary-color,
+            $lightness: -10%,
+            $alpha: -15%
+          ) inset;
+        opacity: 0;
+        transition: all ease-in-out 150ms;
+      }
+
+      a:hover {
+        background: color.scale(config.$secondary-color, $alpha: -20%);
+        transform: scale(1.03);
+      }
+
+      a:hover::before,
+      a:hover::after {
+        opacity: 1;
+      }
+
+      a:hover::before {
+        transform: scale(1.05, 1.25);
       }
 
       .cost {
@@ -132,7 +180,7 @@ a {
     }
 
     &-2 {
-      @include config.bg-effect(config.$primary-color, 21%);
+      @include config.bg-effect(config.$primary-color, 14%);
       border-radius: config.set-radius(b, 0.3);
 
       h3 {
@@ -148,21 +196,33 @@ a {
     }
   }
 }
+footer {
+  background: color.scale(config.$primary-color, $alpha: -80%);
+  position: absolute;
+  // max-height: 1rem;
+  bottom: 0;
+  width: 100%;
+  padding-inline: 1.95em;
 
-.attribution {
-  /*   font-size: 11px;
-  text-align: center;
-  a {
-    color: hsl(228, 45%, 44%);
-  } */
-  display: none;
+  .attribution {
+    position: relative;
+    font-size: 0.7rem;
+    line-height: 2;
+    text-align: center;
+    a {
+      color: hsl(228, 45%, 44%);
+      margin-inline: 0.2rem;
+    }
+  }
 }
 
 @media (min-width: 700px) {
+  body {
+    padding: 4.5em;
+  }
   .container {
     //@1440x800px shold be ~635px width by ~475px height
     max-width: 39.6em;
-    align-self: center;
 
     .card {
       padding: 2.4rem;
