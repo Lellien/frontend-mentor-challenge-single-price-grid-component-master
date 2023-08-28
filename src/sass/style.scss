@@ -197,21 +197,32 @@ a {
   }
 }
 footer {
-  background: color.scale(config.$primary-color, $alpha: -80%);
-  position: absolute;
-  // max-height: 1rem;
+  position: fixed;
   bottom: 0;
-  width: 100%;
-  padding-inline: 1.95em;
+  right: 0;
+  left: 0;
+  background: color.scale(config.$primary-color, $alpha: -95%);
+  padding-inline: 1.95rem;
+  line-height: 2;
 
   .attribution {
-    position: relative;
+    display: flex;
+    justify-content: center;
+    gap: 1em;
     font-size: 0.7rem;
-    line-height: 2;
-    text-align: center;
-    a {
-      color: hsl(228, 45%, 44%);
-      margin-inline: 0.2rem;
+    background: color.scale(config.$primary-color, $alpha: -80%);
+    transition: gap ease-in-out 300ms;
+
+    span {
+      text-align: center;
+      padding-inline: 1em;
+      max-height: 100%;
+      transition: all ease-in-out 250ms;
+
+      a {
+        color: hsl(228, 45%, 44%);
+        margin-left: 0.2rem;
+      }
     }
   }
 }
@@ -254,6 +265,58 @@ footer {
       }
       &-2 {
         border-radius: config.set-radius(br, 0.3);
+      }
+    }
+  }
+  footer {
+    padding-inline: calc((100vw - 39rem) / 2);
+
+    .attribution {
+      background: color.scale(config.$primary-color, $alpha: -95%);
+    }
+  }
+
+  footer:hover {
+    .attribution {
+      gap: 15%;
+      span {
+        transform: scale(1.5) translatey(-1em);
+        background: color.scale(
+          config.$primary-color,
+          $saturation: -50%,
+          $lightness: 50%
+        );
+        border-radius: config.set-radius(t, 0.2);
+      }
+    }
+  }
+
+  .attribution span a:hover {
+    color: color.scale(config.$primary-color, $lightness: -80%);
+  }
+}
+
+@media (max-width: 360px) {
+  body {
+    flex-direction: column;
+    gap: 1em;
+  }
+  footer {
+    position: static;
+    width: 100%;
+    padding-inline: 0;
+
+    .attribution {
+      flex-direction: column;
+      justify-content: center;
+      background: none;
+      gap: 0.5em;
+
+      span {
+        border-radius: 0.4em;
+        background: color.scale(config.$primary-color, $alpha: -80%);
+        padding: 0.5em;
+        line-height: 1.2;
       }
     }
   }
