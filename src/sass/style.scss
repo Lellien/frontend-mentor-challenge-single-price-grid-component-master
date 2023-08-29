@@ -15,7 +15,7 @@ body {
   min-height: 100vh;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
-  padding: 1.95em;
+  padding: 4.4em 1.97em 4.69em; //@ mobile ~70px top , ~75px bottom, 31px each side
   background: config.$light-gray;
   font-family: config.$font-stack;
   color: #ffff;
@@ -45,8 +45,8 @@ a {
 }
 
 .container {
-  //@375x870px should be ~313px width by ~725px height
-  height: fit-content;
+  //@375x870px should be ~313px width by ~724/725px height
+  // height: fit-content;
   box-shadow: 0 1rem 1.5rem
     color.scale(config.$primary-color, $saturation: -20%, $alpha: -80%);
   border-radius: 0.3rem;
@@ -55,11 +55,12 @@ a {
     padding: 1.4em 1.56em;
   }
   .community {
-    //@1440x800px  ~640px by ~220px
-    @include config.bg-effect(#ffff);
+    //@mobile ~313 width x ~268 height
+    background: #ffff;
     border-radius: config.set-radius(t, 0.3);
 
     h1 {
+      padding-block: 0.14em;
       color: config.$primary-color;
       line-height: 1.5;
       font-size: 1.25em;
@@ -71,19 +72,19 @@ a {
       font-size: 0.95em;
       font-weight: 700;
       line-height: 1.2;
-      margin-bottom: 1.3em;
+      margin-bottom: 1.2em;
     }
     p {
       color: config.$mid-gray;
       font-size: 0.85em;
       opacity: 0.9;
-      line-height: 2;
-      margin-bottom: 0.38rem;
+      line-height: 1.93;
+      margin-bottom: 0.5rem;
     }
   }
 
   .info {
-    //@1440x800 should be 640px by  ~260px height
+    //@mobile should be ~313px width by  ~456px height total both parts
     display: flex;
     flex-direction: column;
 
@@ -97,7 +98,7 @@ a {
     }
 
     &-1 {
-      //@desktop design 320px w x 260px h
+      //@mobile ~313 x ~228
       @include config.bg-effect(config.$primary-color, 4%);
 
       h3 {
@@ -107,7 +108,7 @@ a {
       a {
         display: block;
         text-align: center;
-        margin: 1.6rem auto 0.1rem;
+        margin-block: 1.64rem 0.11rem;
         padding-block: 0.75em;
         border-radius: 0.3rem;
         background: config.$secondary-color;
@@ -126,7 +127,6 @@ a {
         bottom: 0;
         left: 0;
         border-radius: 0.4em;
-        // border: 1px solid #ffff;
         border: 1px solid config.$secondary-color;
         opacity: 0;
         transition: all ease-in-out 250ms;
@@ -169,6 +169,7 @@ a {
         gap: 0.65rem;
 
         .fee {
+          line-height: 1.47;
           font-size: 2rem;
           font-weight: 700;
         }
@@ -180,6 +181,7 @@ a {
     }
 
     &-2 {
+      //@mobile ~313 width x ~228 height
       @include config.bg-effect(config.$primary-color, 14%);
       border-radius: config.set-radius(b, 0.3);
 
@@ -197,6 +199,7 @@ a {
   }
 }
 footer {
+  display: none;
   position: fixed;
   bottom: 0;
   right: 0;
@@ -229,23 +232,26 @@ footer {
 
 @media (min-width: 700px) {
   body {
-    padding: 4.5em;
+    padding-block: 10em; // @desktop ~160 top, sides don't matter as max-width on container
   }
   .container {
     //@1440x800px shold be ~635px width by ~475px height
-    max-width: 39.6em;
+    max-width: 39.7em;
 
     .card {
-      padding: 2.4rem;
+      padding: 2.4rem 2.4rem;
     }
 
     .community {
+      //@1440x800 should be 640px by  ~216px height
+
       font-size: 1.16rem;
       h1 {
+        padding: 0;
         margin-bottom: 1rem;
       }
       h2 {
-        margin-bottom: 0.25em;
+        margin-bottom: 0.26em;
       }
       h2,
       p {
@@ -261,7 +267,12 @@ footer {
       flex-direction: row;
 
       &-1 {
+        //@desktop design 320px w x 260px h
         border-radius: config.set-radius(bl, 0.3);
+
+        a {
+          margin-top: 1.7rem;
+        }
       }
       &-2 {
         border-radius: config.set-radius(br, 0.3);

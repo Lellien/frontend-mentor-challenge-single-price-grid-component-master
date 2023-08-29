@@ -17,7 +17,7 @@ body {
   min-height: 100vh;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
-  padding: 1.95em;
+  padding: 4.4em 1.97em 4.69em;
   background: hsl(204, 43%, 93%);
   font-family: "Karla", sans-serif;
   color: white;
@@ -48,7 +48,6 @@ a {
 }
 
 .container {
-  height: fit-content;
   box-shadow: 0 1rem 1.5rem rgba(55, 164, 162, 0.2);
   border-radius: 0.3rem;
 }
@@ -56,10 +55,11 @@ a {
   padding: 1.4em 1.56em;
 }
 .container .community {
-  background: rgba(255, 255, 255, 0.99);
+  background: white;
   border-radius: 0.3rem 0.3rem 0 0;
 }
 .container .community h1 {
+  padding-block: 0.14em;
   color: hsl(179, 62%, 43%);
   line-height: 1.5;
   font-size: 1.25em;
@@ -70,14 +70,14 @@ a {
   font-size: 0.95em;
   font-weight: 700;
   line-height: 1.2;
-  margin-bottom: 1.3em;
+  margin-bottom: 1.2em;
 }
 .container .community p {
   color: hsl(218, 22%, 67%);
   font-size: 0.85em;
   opacity: 0.9;
-  line-height: 2;
-  margin-bottom: 0.38rem;
+  line-height: 1.93;
+  margin-bottom: 0.5rem;
 }
 .container .info {
   display: flex;
@@ -99,7 +99,7 @@ a {
 .container .info-1 a {
   display: block;
   text-align: center;
-  margin: 1.6rem auto 0.1rem;
+  margin-block: 1.64rem 0.11rem;
   padding-block: 0.75em;
   border-radius: 0.3rem;
   background: hsl(71, 73%, 54%);
@@ -150,6 +150,7 @@ a {
   gap: 0.65rem;
 }
 .container .info-1 .cost .fee {
+  line-height: 1.47;
   font-size: 2rem;
   font-weight: 700;
 }
@@ -171,6 +172,7 @@ a {
 }
 
 footer {
+  display: none;
   position: fixed;
   bottom: 0;
   right: 0;
@@ -200,22 +202,23 @@ footer .attribution span a {
 
 @media (min-width: 700px) {
   body {
-    padding: 4.5em;
+    padding-block: 10em;
   }
   .container {
-    max-width: 39.6em;
+    max-width: 39.7em;
   }
   .container .card {
-    padding: 2.4rem;
+    padding: 2.4rem 2.4rem;
   }
   .container .community {
     font-size: 1.16rem;
   }
   .container .community h1 {
+    padding: 0;
     margin-bottom: 1rem;
   }
   .container .community h2 {
-    margin-bottom: 0.25em;
+    margin-bottom: 0.26em;
   }
   .container .community h2,
   .container .community p {
@@ -229,6 +232,9 @@ footer .attribution span a {
   }
   .container .info-1 {
     border-radius: 0 0 0 0.3rem;
+  }
+  .container .info-1 a {
+    margin-top: 1.7rem;
   }
   .container .info-2 {
     border-radius: 0 0 0.3rem 0;
