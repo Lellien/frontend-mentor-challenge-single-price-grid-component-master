@@ -2,6 +2,7 @@
 @use "config";
 @import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
+/* css reset */
 *,
 *::before,
 *::after {
@@ -12,9 +13,9 @@
 }
 
 body {
+  -webkit-font-smoothing: antialiased;
   min-height: 100vh;
   line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
   padding: 4.4em 1.97em 4.69em; //@ mobile ~70px top , ~75px bottom, 31px each side
   background: config.$light-gray;
   font-family: config.$font-stack;
@@ -24,19 +25,10 @@ body {
   align-items: center;
 }
 
-input,
-button,
-textarea,
-select {
-  font: inherit;
-}
 p,
 h1,
 h2,
-h3,
-h4,
-h5,
-h6 {
+h3 {
   overflow-wrap: break-word;
 }
 
@@ -46,7 +38,6 @@ a {
 
 .container {
   //@375x870px should be ~313px width by ~724/725px height
-  // height: fit-content;
   box-shadow: 0 1rem 1.5rem
     color.scale(config.$primary-color, $saturation: -20%, $alpha: -80%);
   border-radius: 0.3rem;
@@ -199,7 +190,6 @@ a {
   }
 }
 footer {
-  display: none;
   position: fixed;
   bottom: 0;
   right: 0;
@@ -239,13 +229,15 @@ footer {
     max-width: 39.7em;
 
     .card {
-      padding: 2.4rem 2.4rem;
+      padding: 2.4rem;
     }
 
     .community {
       //@1440x800 should be 640px by  ~216px height
 
+      border-radius: config.set-radius(t, 0.5);
       font-size: 1.16rem;
+
       h1 {
         padding: 0;
         margin-bottom: 1rem;
@@ -268,14 +260,14 @@ footer {
 
       &-1 {
         //@desktop design 320px w x 260px h
-        border-radius: config.set-radius(bl, 0.3);
+        border-radius: config.set-radius(bl, 0.5);
 
         a {
           margin-top: 1.7rem;
         }
       }
       &-2 {
-        border-radius: config.set-radius(br, 0.3);
+        border-radius: config.set-radius(br, 0.5);
       }
     }
   }

@@ -3,6 +3,7 @@
  desktop-width 1440px
 mobile-width 375px;
  */
+/* css reset */
 *,
 *::before,
 *::after {
@@ -14,9 +15,9 @@ mobile-width 375px;
 }
 
 body {
+  -webkit-font-smoothing: antialiased;
   min-height: 100vh;
   line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
   padding: 4.4em 1.97em 4.69em;
   background: hsl(204, 43%, 93%);
   font-family: "Karla", sans-serif;
@@ -26,20 +27,10 @@ body {
   align-items: center;
 }
 
-input,
-button,
-textarea,
-select {
-  font: inherit;
-}
-
 p,
 h1,
 h2,
-h3,
-h4,
-h5,
-h6 {
+h3 {
   overflow-wrap: break-word;
 }
 
@@ -172,7 +163,6 @@ a {
 }
 
 footer {
-  display: none;
   position: fixed;
   bottom: 0;
   right: 0;
@@ -208,9 +198,10 @@ footer .attribution span a {
     max-width: 39.7em;
   }
   .container .card {
-    padding: 2.4rem 2.4rem;
+    padding: 2.4rem;
   }
   .container .community {
+    border-radius: 0.5rem 0.5rem 0 0;
     font-size: 1.16rem;
   }
   .container .community h1 {
@@ -231,13 +222,13 @@ footer .attribution span a {
     flex-direction: row;
   }
   .container .info-1 {
-    border-radius: 0 0 0 0.3rem;
+    border-radius: 0 0 0 0.5rem;
   }
   .container .info-1 a {
     margin-top: 1.7rem;
   }
   .container .info-2 {
-    border-radius: 0 0 0.3rem 0;
+    border-radius: 0 0 0.5rem 0;
   }
   footer {
     padding-inline: calc((100vw - 39rem) / 2);
